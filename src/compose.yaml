@@ -1,0 +1,17 @@
+services:
+  postgres:
+    restart: unless-stopped
+    image: 'docker.repository.bog.ge/postgres:latest'
+    environment:
+      - 'POSTGRES_DB=mydatabase'
+      - 'POSTGRES_PASSWORD=asd'
+      - 'POSTGRES_USER=asd'
+    ports:
+      - '5439:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+  pgadmindata:
+
